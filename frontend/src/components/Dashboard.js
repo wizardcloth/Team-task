@@ -23,8 +23,8 @@ const Dashboard = () => {
       const config = { headers: { Authorization: `Bearer ${token}` } };
       
       const [projectsRes, tasksRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/projects', config),
-        axios.get('http://localhost:5000/api/tasks', config)
+        axios.get('https://team-task-three.vercel.app/api/projects', config),
+        axios.get('https://team-task-three.vercel.app/api/tasks', config)
       ]);
       
       const tasks = tasksRes.data;

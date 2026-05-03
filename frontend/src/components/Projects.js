@@ -28,7 +28,7 @@ const Projects = () => {
       }
       
       console.log('Fetching projects...');
-      const response = await axios.get('http://localhost:5000/api/projects', {
+      const response = await axios.get('https://team-task-three.vercel.app/api/projects', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -55,7 +55,7 @@ const Projects = () => {
       console.log('Creating project with data:', formData);
       console.log('Current user:', user);
       
-      const response = await axios.post('http://localhost:5000/api/projects', formData, {
+      const response = await axios.post('https://team-task-three.vercel.app/api/projects', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -79,7 +79,7 @@ const Projects = () => {
     if (window.confirm('Are you sure you want to delete this project? This will also delete all tasks in this project.')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+        await axios.delete(`https://team-task-three.vercel.app/api/projects/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         toast.success('Project deleted successfully');
